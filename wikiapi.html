@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<h1>Article Below</h1>
+	<div id="article"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		
+		$.ajax({
+	url: "http://en.wikipedia.org/w/api.php?action=query&list=random&rnlimit=1",
+	method: "POST"
+	}).done(function(response) {
+		$("#article").append(response);
+		});
+
+	</script>
+</body>
+</html>
